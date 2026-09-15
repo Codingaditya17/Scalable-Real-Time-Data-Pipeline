@@ -5,6 +5,12 @@ Airflow → PostgreSQL → Kafka → Spark Structured Streaming → Cassandra, w
 by killing nodes/brokers and observing the system survive (not just configured
 on paper).
 
+The repository also includes an [AWS reference architecture](docs/aws-reference-architecture.md)
+and Terraform foundation for a two-AZ private VPC, IAM-authenticated Amazon MSK
+Serverless, encrypted/versioned S3 checkpoints, and CloudWatch logging. The AWS
+design is clearly separated from the locally measured implementation so the
+benchmark claims remain reproducible and honest.
+
 ## Two deployment modes
 
 | | `docker-compose.yml` (single-node demo) | `docker-compose.multinode.yml` (replicated) |
